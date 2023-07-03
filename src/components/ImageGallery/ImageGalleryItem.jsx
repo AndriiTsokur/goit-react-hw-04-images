@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function ImageGalleryItem({ picts }) {
+export function ImageGalleryItem({ picts, onClick }) {
+	const handleClick = (imgSrc, imgTags) => {
+		onClick(imgSrc, imgTags);
+	};
+
 	return picts.map(picture => {
 		return (
 			<li key={picture.id} className="gallery-item">
-				<img src={picture.webformatURL} alt={picture.tags} />
+				<img
+					src={picture.webformatURL}
+					alt={picture.tags}
+					onClick={() => handleClick(picture.largeImageURL, picture.tags)}
+				/>
 			</li>
 		);
 	});
@@ -20,4 +28,5 @@ ImageGalleryItem.propTypes = {
 			tags: PropTypes.string.isRequired,
 		}).isRequired
 	).isRequired,
+	onClick: PropTypes.func.isRequired,
 };

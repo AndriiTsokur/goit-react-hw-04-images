@@ -36,6 +36,7 @@ img {
 }
 .app > p {
   text-align: center;
+  justify-self: center;
 }
 
 /*
@@ -55,6 +56,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 72px;
   min-height: 64px;
   padding-right: 24px;
   padding-left: 24px;
@@ -218,7 +220,7 @@ img {
 /*
  * Стили компонента Modal
  */
-.Overlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -237,7 +239,7 @@ img {
   z-index: 1200;
 }
 
-.Modal {
+.modal {
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
 }/*# sourceMappingURL=main.css.map */
