@@ -1,4 +1,4 @@
-# goit-react-hw-03_1
+# goit-react-hw-03_2
 
 GoIT Academy: React Section - Home Work No. 3-2 by Andrii Tsokur
 
