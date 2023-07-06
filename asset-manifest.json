@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-04-images/static/css/main.abb664aa.css",
+    "main.js": "/goit-react-hw-04-images/static/js/main.1cd98303.js",
+    "index.html": "/goit-react-hw-04-images/index.html",
+    "static/media/magnifying-tool-svgrepo-com.svg": "/goit-react-hw-04-images/static/media/magnifying-tool-svgrepo-com.6211e08cb9d84171079a.svg",
+    "main.abb664aa.css.map": "/goit-react-hw-04-images/static/css/main.abb664aa.css.map",
+    "main.1cd98303.js.map": "/goit-react-hw-04-images/static/js/main.1cd98303.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abb664aa.css",
+    "static/js/main.1cd98303.js"
+  ]
+}
