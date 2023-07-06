@@ -67,32 +67,14 @@ export const App = () => {
 		setStartPage(startPage + 1);
 	};
 
-	const handleScroll = () => {
-		window.scroll(0, 0);
-	};
-
 	const onClickPict = (imgSrc, imgTags) => {
-		window.addEventListener('scroll', handleScroll);
-
-		setModalIsOpen(true);
+		onOpenModal();
 		setModalImgSrc(imgSrc);
 		setModalImgTags(imgTags);
-
-		const handleEsc = e => {
-			if (e.code === 'Escape') {
-				setModalIsOpen(false);
-				window.removeEventListener('keydown', handleEsc);
-				window.removeEventListener('scroll', handleScroll);
-			}
-		};
-
-		window.addEventListener('keydown', handleEsc);
 	};
 
-	const onClickModal = () => {
-		window.removeEventListener('scroll', handleScroll);
-		setModalIsOpen(false);
-	};
+	const onOpenModal = () => setModalIsOpen(true);
+	const onCloseModal = () => setModalIsOpen(false);
 
 	return (
 		<div className="app">
@@ -111,7 +93,7 @@ export const App = () => {
 				<Modal
 					imgSrc={modalImgSrc}
 					imgTags={modalImgTags}
-					onClick={onClickModal}
+					onCloseModal={onCloseModal}
 				/>
 			)}
 
