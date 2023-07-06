@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function Button({ onClick }) {
+export const Button = ({ onClick }) => {
 	return (
 		<button
 			className="loadmore__button"
@@ -11,7 +11,7 @@ export function Button({ onClick }) {
 			Load more
 		</button>
 	);
-}
+};
 
 Button.propTypes = {
 	onClick: PropTypes.func.isRequired,

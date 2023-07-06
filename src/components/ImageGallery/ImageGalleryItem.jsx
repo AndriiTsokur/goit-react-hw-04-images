@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function ImageGalleryItem({ picts, onClick }) {
+export const ImageGalleryItem = ({ picts, onClick }) => {
 	const handleClick = (imgSrc, imgTags) => {
 		onClick(imgSrc, imgTags);
 	};
@@ -17,7 +17,7 @@ export function ImageGalleryItem({ picts, onClick }) {
 			</li>
 		);
 	});
-}
+};
 
 ImageGalleryItem.propTypes = {
 	picts: PropTypes.arrayOf(
