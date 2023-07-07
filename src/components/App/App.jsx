@@ -51,7 +51,7 @@ export const App = () => {
 			fetchPictsData();
 			setBtnClick(false);
 		}
-	}, [query, startPage, picts, pictsPerPage, btnClick]);
+	}, [query, startPage, picts, pictsPerPage, btnClick, isLoading]);
 
 	const onSubmit = searchValue => {
 		setQuery(searchValue);
@@ -73,13 +73,16 @@ export const App = () => {
 		setModalImgTags(imgTags);
 	};
 
-	const onOpenModal = () => setModalIsOpen(true);
+	const onOpenModal = () => {
+		setModalIsOpen(true);
+		setIsLoading(true);
+	};
 	const onCloseModal = () => setModalIsOpen(false);
+	const onModalLoad = () => setIsLoading(false);
 
 	return (
 		<div className="app">
 			<Searchbar onSubmit={onSubmit} />
-			{isLoading && <Loader />}
 
 			{noResult && picts.length === 0 && (
 				<p>There are no images according to your query</p>
@@ -89,15 +92,18 @@ export const App = () => {
 				<ImageGalleryItem picts={picts} onClick={onClickPict} />
 			</ImageGallery>
 
+			{showLoadMore && <Button onClick={onClickMore} />}
+
 			{modalIsOpen && (
 				<Modal
 					imgSrc={modalImgSrc}
 					imgTags={modalImgTags}
 					onCloseModal={onCloseModal}
+					onModalLoad={onModalLoad}
 				/>
 			)}
 
-			{showLoadMore && <Button onClick={onClickMore} />}
+			{isLoading && <Loader />}
 		</div>
 	);
 };

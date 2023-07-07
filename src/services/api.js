@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const perPage =
+	Math.floor(window.innerWidth / (320 + 16)) *
+	Math.floor(window.innerHeight / 260);
+
 const API_URL = 'https://pixabay.com/api/';
 export const apiOptions = {
 	key: '36292494-f78d44a3f0f4a5930d1d79262',
@@ -7,7 +11,7 @@ export const apiOptions = {
 	image_type: 'photo',
 	orientation: 'horizontal',
 	page: 1,
-	per_page: 12,
+	per_page: perPage,
 };
 
 export const fetchPicts = async (query, startPage) => {
